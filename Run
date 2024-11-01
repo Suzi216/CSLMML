@@ -1,4 +1,5 @@
 ## Run Dataset  SIM/SIM-c/SIM-ln/SIM-G
+
 # file_path_SIM = '~/SIM-ln'
 # estimated_direction, confidence_estimated,ground_truth=estemated_direction(file_path_SIM)
 # estimator_value = [1 if est == '->' else 0 for est in estimated_direction]
@@ -12,6 +13,16 @@
 # estimator_value = [1 if est == '->' else 0 for est in estimated_direction]
 # audrc_an = calculate_AUDRC(ground_truth,estimator_value,confidence_estimated)
 # acc=calculate_accuracy(estimated_direction,confidence_estimated,ground_truth)
+
+## Run Dataset  Multi/Net/Cha
+
+file_path_Multi = '~/Multi'
+estimated_direction, confidence_estimated,ground_truth=estemated_direction_new(file_path_Multi)
+estimator_value = [1 if est == '->' else -1 for est in estimated_direction]
+audrc_multi = calculate_AUDRC(ground_truth,estimator_value,confidence_estimated)
+acc=calculate_accuracy(estimated_direction,confidence_estimated,ground_truth)
+
+
 
 
 
