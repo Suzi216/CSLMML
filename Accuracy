@@ -1,12 +1,21 @@
-def calculate_accuracy(estimated_direction,confidence_estimated,ground_truth):
+
+def calculate_accuracy(true_directions: List[str], estimated_directions: List[str], weights: List[float]) -> float:
     """
-   Calculates the accuracy of estimated directions compared to ground truth.
-   """
-   
-    estimator_value = [1 if est == '->' else 0 for est in estimated_direction]
-    
-    sumsum = sum([1 if gt == est else 0 for gt, est in zip(ground_truth, estimator_value
-    )])
-    acc=sumsum/len(ground_truth)
-    
-    return acc
+    Calculate the accuracy of causal direction decisions.
+    """
+    assert len(true_directions) == len(estimated_directions) == len(weights), "All input lists must have the same length"
+
+    numerator = 0
+    denominator = 0
+
+    for true_dir, est_dir, weight in zip(true_directions, estimated_directions, weights):
+        if est_dir != '?':  # Only consider decisions that are not undecided
+            if true_dir == est_dir:
+                numerator += weight
+            denominator += weight
+
+    if denominator == 0:
+        return 0.0  
+
+    accuracy = numerator / denominator
+    return accuracy
