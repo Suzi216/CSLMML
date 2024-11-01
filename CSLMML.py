@@ -11,7 +11,7 @@ def normalize_and_standardize(x, y):
     def standardize(x):
         Z = (x-np.mean(x))/np.std(x)
         return Z 
-    normalized_x = standardize(x)
+    normalized_x = normalize(x)
     normalized_y = standardize(y)
     return normalized_x, normalized_y
 
@@ -81,7 +81,7 @@ def EM_algorithm(x,y, max_iterations=100, tolerance=1e-6):
     beta0_mle, beta_mle, tau_hat,_=compute_mles([1, 1, nu_hat,tau_hat],normalized_x,standardize_y)
     
     khat=calculate_khat(normalized_x, beta_mle, tau_hat)
-    loss=np.inf
+    
     for _ in range(max_iterations):
         # E-step
         w_i_hat = compute_weights(len(standardize_y),nu_hat,standardize_y,tau_hat,beta0_mle,normalized_x,beta_mle)
