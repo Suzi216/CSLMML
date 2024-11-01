@@ -1,0 +1,12 @@
+def calculate_accuracy(estimated_direction,confidence_estimated,ground_truth):
+    """
+   Calculates the accuracy of estimated directions compared to ground truth.
+   """
+   
+    estimator_value = [1 if est == '->' else 0 for est in estimated_direction]
+    
+    sumsum = sum([1 if gt == est else 0 for gt, est in zip(ground_truth, estimator_value
+    )])
+    acc=sumsum/len(ground_truth)
+    
+    return acc
