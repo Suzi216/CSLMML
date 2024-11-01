@@ -90,10 +90,11 @@ def EM_algorithm(x,y, max_iterations=100, tolerance=1e-6):
         result = minimize(likelihood_t, [tau_hat], args=(khat, nu_hat,w_i_hat,standardize_y,betas.x[0],normalized_x,betas.x[1]),method='trust-constr')
         tau=result.x[0]
 
-        if np.abs(loss - result.fun)  < tolerance :
+        if np.abs(tau_hat - tau)  < tolerance and np.abs(beta_mle-betas.x[1])  < tolerance and np.abs( beta0_mle-betas.x[0])  < tolerance :
           break
+        beta_mle=betas.x[1]
+        beta0_mle=betas.x[0]
         tau_hat=tau
-        loss=result.fun
            
     final_message_length = result.fun
 
