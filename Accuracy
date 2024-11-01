@@ -1,4 +1,4 @@
-
+from typing import List
 def calculate_accuracy(true_directions: List[str], estimated_directions: List[str], weights: List[float]) -> float:
     """
     Calculate the accuracy of causal direction decisions.
