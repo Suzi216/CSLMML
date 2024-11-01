@@ -1,0 +1,17 @@
+## Run Dataset  SIM/SIM-c/SIM-ln/SIM-G
+# file_path_SIM = '~/SIM-ln'
+# estimated_direction, confidence_estimated,ground_truth=estemated_direction(file_path_SIM)
+# estimator_value = [1 if est == '->' else 0 for est in estimated_direction]
+# audrc_sim = calculate_AUDRC(ground_truth,estimator_value,confidence_estimated)
+# acc=calculate_accuracy(estimated_direction,confidence_estimated,ground_truth)
+
+## Run Dataset  AN/AN-s/LS/LS-s/MN-U
+ 
+# file_path_AN = '~/LS'
+# estimated_direction, confidence_estimated,ground_truth=estemated_direction(file_path_AN)
+# estimator_value = [1 if est == '->' else 0 for est in estimated_direction]
+# audrc_an = calculate_AUDRC(ground_truth,estimator_value,confidence_estimated)
+# acc=calculate_accuracy(estimated_direction,confidence_estimated,ground_truth)
+
+
+
