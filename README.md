@@ -6,4 +6,4 @@ This is the implementation of our paper: Causal Location-Scale Noise Models by M
 
 ## Experimenting
 - To execute the experiments, run Run.py after updating the file path to specify the location of your dataset.
-- Experiment results will be saved in the `/results` directory
+- Experiment results are saved in the `/results` directory
