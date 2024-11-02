@@ -4,8 +4,8 @@ from estemated_direction import estemated_direction_2
 from read_weights import read_last_weights
 
 from extract_tubingen_truth import extract_tubingen_truth
-from Audrc import calculate_AUDRC
-from Accuracy import calculate_accuracy
+from audrc import calculate_AUDRC
+from accuracy import calculate_accuracy
 
 ## Run Tuegingen Dataset
 file_path_truth= '~/Truth'
